@@ -13,3 +13,9 @@
 2. dos
 3. tres
 4. cuatro
+
+**Texto negritas**
+_italicas_
+***negritas italica***
+
+![Descripción imagen](https://es.rollingstone.com/wp-content/uploads/2023/04/Humbe-y-la-construcciondeconstruccion-de-su-ESENCIA-2.jpg)
