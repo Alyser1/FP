@@ -16,9 +16,9 @@ int main() {
     // Determinar el número más grande
     int mayor;
     
-    if (A >= B && A >= C) {
+    if (A >= B and A >= C) {
         mayor = A;
-    } else if (B >= A && B >= C) {
+    } else if (B >= A and B >= C) {
         mayor = B;
     } else {
         mayor = C;
@@ -26,6 +26,50 @@ int main() {
 
     // Mostrar el resultado
     cout << "El número más grande es: " << mayor << endl;
+
+int main() {
+    // Declarar las variables para los tres números
+    int A, B, C;
+
+    // Pedir al usuario que ingrese tres números diferentes
+    cout << "Ingrese el valor de A: ";
+    cin >> A;
+    cout << "Ingrese el valor de B: ";
+    cin >> B;
+    cout << "Ingrese el valor de C: ";
+    cin >> C;
+
+    // Determinar el valor máximo
+    int maximo;
+    if (A > B) {
+        if (A > C)
+            maximo = A;
+        else
+            maximo = C;
+    } else {
+        if (B > C)
+            maximo = B;
+        else
+            maximo = C;
+    }
+
+    // Determinar el valor mínimo
+    int minimo;
+    if (A < B) {
+        if (A < C)
+            minimo = A;
+        else
+            minimo = C;
+    } else {
+        if (B < C)
+            minimo = B;
+        else
+            minimo = C;
+    }
+
+    // Mostrar los valores máximo y mínimo
+    cout << "El valor máximo es: " << maximo << endl;
+    cout << "El valor mínimo es: " << minimo << endl;
 
     return 0;
 }
