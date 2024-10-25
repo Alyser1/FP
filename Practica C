@@ -1,0 +1,120 @@
+// enteros.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
+//
+
+#include <iostream>
+#include <limits>
+#include <iomanip>
+#include <locale>
+using namespace std;
+
+int main() {
+    // 1.1 Cuadrado de un número
+    int numero;
+    cout << "Ingrese un número: ";
+    cin >> numero;
+    int cuadrado = numero * numero;
+    cout << "El cuadrado de " << numero << " es " << cuadrado << endl;
+
+    // 1.2 Multiplicación secuencial de un número
+    int x;
+    cout << "Ingrese un número: ";
+    cin >> x;
+    cout << x << " -- " << x * 2 << " -- " << x * 3 << " -- " << x * 4 << " -- " << x * 5 << endl;
+
+    // 1.3 Conversión de kilogramos a libras
+    float pesoKg;
+    cout << "Ingrese su peso en kilogramos: ";
+    cin >> pesoKg;
+    float pesoLibras = pesoKg * 2.2;
+    cout << "Su peso en libras es: " << pesoLibras << endl;
+
+    // 1.4 Suma y promedio de tres números
+    float num1, num2, num3;
+    cout << "Ingrese tres números: ";
+    cin >> num1 >> num2 >> num3;
+    float total = num1 + num2 + num3;
+    float promedio = total / 3;
+    cout << "Total: " << total << endl;
+    cout << "Promedio: " << promedio << endl;
+
+    // 1.5 Cálculo de propina
+    float totalCuenta, porcentajePropina;
+    cout << "Ingrese el total de la cuenta: ";
+    cin >> totalCuenta;
+    cout << "Ingrese el porcentaje de propina: ";
+    cin >> porcentajePropina;
+    float propina = totalCuenta * (porcentajePropina / 100);
+    cout << "La propina a dar es: " << propina << endl;
+
+    // 1.6 Comparar si un número es mayor a 100
+    int numeroComparar;
+    cout << "Ingrese un número: ";
+    cin >> numeroComparar;
+    if (numeroComparar > 100) {
+        cout << "El número es mayor a 100" << endl;
+    } else {
+        cout << "El número es menor o igual que 100" << endl;
+    }
+
+    // 1.7 Comprobar si el número es positivo o negativo
+    int numeroPosNeg;
+    cout << "Ingrese un número: ";
+    cin >> numeroPosNeg;
+    if (numeroPosNeg < 0) {
+        cout << "El número es negativo" << endl;
+    } else {
+        cout << "El número es positivo" << endl;
+    }
+
+    // 1.8 Validación de contraseña
+    string miEmail, password;
+    cout << "Ingrese su correo electrónico: ";
+    cin >> miEmail;
+    cout << "Ingrese su contraseña: ";
+    cin >> password;
+
+    if (password == "12345") {
+        cout << "Felicidades, password correcto" << endl;
+    } else {
+        cout << "Su password es incorrecto" << endl;
+    }
+
+    // 1.9 Conversión de Fahrenheit a Celsius
+    float fahrenheit;
+    cout << "Ingrese la temperatura en Fahrenheit: ";
+    cin >> fahrenheit;
+    float celsius = (fahrenheit - 32) * 5 / 9;
+
+    if (fahrenheit == 32) {
+        cout << "Cero grados centígrados" << endl;
+    } else {
+        cout << "La temperatura en Celsius es: " << celsius << " grados centígrados" << endl;
+    }
+
+    // 1.10 Cálculo de masa corporal
+    float peso, estatura;
+    cout << "Ingrese su peso en kilogramos: ";
+    cin >> peso;
+    cout << "Ingrese su estatura en metros: ";
+    cin >> estatura;
+
+    float masaCorporal = peso / (estatura * estatura);
+    cout << "Su masa corporal es: " << masaCorporal << endl;
+
+    if (masaCorporal < 18.5) {
+        cout << "Abajo del peso normal" << endl;
+    } else if (masaCorporal >= 18.5 && masaCorporal < 25) {
+        cout << "Peso normal" << endl;
+    } else if (masaCorporal >= 25 && masaCorporal < 30) {
+        cout << "Sobrepeso" << endl;
+    } else if (masaCorporal >= 30 && masaCorporal < 35) {
+        cout << "Obeso Clase 1" << endl;
+    } else if (masaCorporal >= 35 && masaCorporal < 40) {
+        cout << "Obeso Clase 2" << endl;
+    } else {
+        cout << "Obeso Clase 3" << endl;
+    }
+
+    return 0;
+}
+
