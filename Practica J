@@ -1,0 +1,186 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <climits>
+#include <ctime>
+using namespace std;
+
+// Ejercicio 1
+void ejercicio1() {
+    int numero;
+    do {
+        cout << "Ingrese un numero (0 para salir): ";
+        cin >> numero;
+        if (numero != 0) {
+            cout << "Resultado: " << numero * 10 << endl;
+        }
+    } while (numero != 0);
+    cout << endl;
+}
+
+// Ejercicio 2
+void ejercicio2() {
+    const int TAMANO = 10;
+    int arreglo[TAMANO] = {5, 12, 34, 7, 1, 90, 56, 23, 67, 18};
+    int mayor = arreglo[0];
+
+    for (int i = 1; i < TAMANO; i++) {
+        if (arreglo[i] > mayor) {
+            mayor = arreglo[i];
+        }
+    }
+    cout << "El mayor elemento es: " << mayor << endl << endl;
+}
+
+// Ejercicio 3
+void ejercicio3() {
+    const int TAMANO = 10;
+    int arreglo[TAMANO] = {5, 12, 34, 7, 1, 90, 56, 23, 67, 18};
+    int suma = 0;
+
+    for (int elemento : arreglo) {
+        suma += elemento;
+    }
+    double promedio = static_cast<double>(suma) / TAMANO;
+    cout << "El promedio es: " << promedio << endl << endl;
+}
+
+// Ejercicio 4
+void ejercicio4() {
+    const int TAMANO = 10;
+    int arreglo[TAMANO] = {5, 12, 34, 7, 1, 90, 56, 23, 67, 18};
+    int mayor = INT_MIN, segundoMayor = INT_MIN;
+
+    for (int elemento : arreglo) {
+        if (elemento > mayor) {
+            segundoMayor = mayor;
+            mayor = elemento;
+        } else if (elemento > segundoMayor && elemento < mayor) {
+            segundoMayor = elemento;
+        }
+    }
+    cout << "El segundo mayor elemento es: " << segundoMayor << endl << endl;
+}
+
+// Ejercicio 5
+void ejercicio5() {
+    const int TAMANO = 10;
+    int arreglo[TAMANO] = {5, 12, 34, 7, 1, 90, 56, 23, 67, 18};
+    int pares = 0, impares = 0;
+
+    for (int elemento : arreglo) {
+        if (elemento % 2 == 0) {
+            pares++;
+        } else {
+            impares++;
+        }
+    }
+    cout << "Pares: " << pares << ", Impares: " << impares << endl << endl;
+}
+
+// Ejercicio 6
+void ejercicio6() {
+    int numero;
+    cout << "Ingrese un numero para mostrar su tabla de multiplicar: ";
+    cin >> numero;
+
+    for (int i = 1; i <= 10; i++) {
+        cout << numero << " x " << i << " = " << numero * i << endl;
+    }
+    cout << endl;
+}
+
+// Ejercicio 7
+void ejercicio7() {
+    const int TAMANO = 1000;
+    vector<int> arreglo(TAMANO);
+    srand(time(NULL));
+
+    for (int i = 0; i < TAMANO; i++) {
+        arreglo[i] = rand() % 1001;
+    }
+
+    sort(arreglo.rbegin(), arreglo.rend());
+    cout << "Los tres mayores elementos son: " << arreglo[0] << ", " << arreglo[1] << ", " << arreglo[2] << endl << endl;
+}
+
+// Ejercicio 8
+void ejercicio8() {
+    const int TAMANO = 1000;
+    vector<double> arreglo(TAMANO);
+    srand(time(NULL));
+
+    for (int i = 0; i < TAMANO; i++) {
+        arreglo[i] = rand() % 1001 + (rand() % 1000) / 1000.0;
+    }
+
+    sort(arreglo.begin(), arreglo.end());
+    cout << "El segundo menor elemento es: " << arreglo[1] << endl << endl;
+}
+
+// Ejercicio 9
+void ejercicio9() {
+    const int TAMANO = 10;
+    int arreglo[TAMANO] = {5, 12, 34, 7, 1, 90, 56, 23, 67, 18};
+
+    reverse(arreglo, arreglo + TAMANO);
+
+    cout << "Arreglo invertido: ";
+    for (int elemento : arreglo) {
+        cout << elemento << " ";
+    }
+    cout << endl << endl;
+}
+
+// Ejercicio 10
+void ejercicio10() {
+    const int TAMANO = 10;
+    int arreglo[TAMANO];
+    srand(time(NULL));
+
+    // Generar arreglo aleatorio
+    for (int i = 0; i < TAMANO; i++) {
+        arreglo[i] = rand() % 101;
+    }
+
+    cout << "Arreglo original: ";
+    for (int elemento : arreglo) {
+        cout << elemento << " ";
+    }
+    cout << endl;
+
+    // Invertir el arreglo
+    reverse(arreglo, arreglo + TAMANO);
+
+    cout << "Arreglo invertido: ";
+    for (int elemento : arreglo) {
+        cout << elemento << " ";
+    }
+    cout << endl << endl;
+}
+
+// Main
+int main() {
+    cout << "Ejercicio 1..." << endl;
+    ejercicio1();
+    cout << "Ejercicio 2..." << endl;
+    ejercicio2();
+    cout << "Ejercicio 3..." << endl;
+    ejercicio3();
+    cout << "Ejercicio 4..." << endl;
+    ejercicio4();
+    cout << " Ejercicio 5..." << endl;
+    ejercicio5();
+    cout << "Ejercicio 6..." << endl;
+    ejercicio6();
+    cout << "Ejercicio 7..." << endl;
+    ejercicio7();
+    cout << "Ejercicio 8..." << endl;
+    ejercicio8();
+    cout << "Ejercicio 9..." << endl;
+    ejercicio9();
+    cout << "Ejercicio 10..." << endl;
+    ejercicio10();
+
+   
+    return 0;
