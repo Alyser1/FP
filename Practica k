@@ -1,0 +1,110 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <climits>
+#include <ctime>
+using namespace std;
+
+// Prototipos de las funciones
+void menu();
+double areaCuadrado(double lado);
+double areaRectangulo(double base, double altura);
+double areaCirculo(double radio);
+double areaTriangulo(double base, double altura);
+double areaRombo(double diagonalMayor, double diagonalMenor);
+
+int main() {
+    int opcion;
+    do {
+        menu();
+        cout << "Selecciona una opción (0 para salir): ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1: {
+                double lado;
+                cout << "Ingresa el lado del cuadrado: ";
+                cin >> lado;
+                cout << "El área del cuadrado es: " << areaCuadrado(lado) << endl;
+                break;
+            }
+            case 2: {
+                double base, altura;
+                cout << "Ingresa la base del rectángulo: ";
+                cin >> base;
+                cout << "Ingresa la altura del rectángulo: ";
+                cin >> altura;
+                cout << "El área del rectángulo es: " << areaRectangulo(base, altura) << endl;
+                break;
+            }
+            case 3: {
+                double radio;
+                cout << "Ingresa el radio del círculo: ";
+                cin >> radio;
+                cout << "El área del círculo es: " << areaCirculo(radio) << endl;
+                break;
+            }
+            case 4: {
+                double base, altura;
+                cout << "Ingresa la base del triángulo: ";
+                cin >> base;
+                cout << "Ingresa la altura del triángulo: ";
+                cin >> altura;
+                cout << "El área del triángulo es: " << areaTriangulo(base, altura) << endl;
+                break;
+            }
+            case 5: {
+                double diagonalMayor, diagonalMenor;
+                cout << "Ingresa la diagonal mayor del rombo: ";
+                cin >> diagonalMayor;
+                cout << "Ingresa la diagonal menor del rombo: ";
+                cin >> diagonalMenor;
+                cout << "El área del rombo es: " << areaRombo(diagonalMayor, diagonalMenor) << endl;
+                break;
+            }
+            case 0:
+                cout << "Saliendo del programa..." << endl;
+                break;
+            default:
+                cout << "Opción no válida. Intenta de nuevo." << endl;
+        }
+    } while (opcion != 0);
+
+    return 0;
+}
+
+// Función para mostrar el menú
+void menu() {
+    cout << "\nCálculo de áreas de figuras geométricas\n";
+    cout << "1. Cuadrado\n";
+    cout << "2. Rectángulo\n";
+    cout << "3. Círculo\n";
+    cout << "4. Triángulo\n";
+    cout << "5. Rombo\n";
+    cout << "0. Salir\n";
+}
+
+// Función para calcular el área de un cuadrado
+double areaCuadrado(double lado) {
+    return lado * lado;
+}
+
+// Función para calcular el área de un rectángulo
+double areaRectangulo(double base, double altura) {
+    return base * altura;
+}
+
+// Función para calcular el área de un círculo
+double areaCirculo(double radio) {
+    return M_PI * radio * radio; // Usamos la constante M_PI de <cmath>
+}
+
+// Función para calcular el área de un triángulo
+double areaTriangulo(double base, double altura) {
+    return (base * altura) / 2;
+}
+
+// Función para calcular el área de un rombo
+double areaRombo(double diagonalMayor, double diagonalMenor) {
+    return (diagonalMayor * diagonalMenor) / 2;
+}
