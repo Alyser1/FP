@@ -8,10 +8,6 @@
 #include <cmath>
 using namespace std;
 
-#ifndef M_PI
-#define M_PI 3.14159265358979323846
-#endif
-
 // Prototipos de las funciones
 void menu();
 double areaCuadrado(double lado);
@@ -90,6 +86,10 @@ void menu() {
     cout << "5. Rombo\n";
     cout << "0. Salir\n";
 }
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
 
 // Función para calcular el área de un cuadrado
 double areaCuadrado(double lado) {
