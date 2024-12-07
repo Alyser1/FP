@@ -1,0 +1,29 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <iomanip>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    //1
+    string meses[12] = { "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre" };
+
+    //2
+    for (int i = 0; i < 12; i++)
+    {
+        cout << meses[i] << endl;
+
+    }
+
+    //3
+    string planetas[8] = { "mercurio", "venus", "tierra", "marte", "jupiter", "saturno", "urano", "neptuno"};
+    //4
+    for (int i = 0; i < 8; i++)
+    {
+        cout << planetas[i] << endl;
+
+    }
+    return 0;
+}
